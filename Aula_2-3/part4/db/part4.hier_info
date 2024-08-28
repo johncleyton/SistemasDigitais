@@ -1,0 +1,66 @@
+|part4
+Qa <= PersonalizedLatch:inst.Q
+D => PersonalizedLatch:inst.D
+D => PositiveEdgeFlipFlop:inst1.D
+D => NegativeEdgeFlipFlop:inst2.D
+Clock => PersonalizedLatch:inst.Clk
+Clock => PositiveEdgeFlipFlop:inst1.Clock
+Clock => NegativeEdgeFlipFlop:inst2.Clock
+Qb <= PositiveEdgeFlipFlop:inst1.Q
+Qc <= NegativeEdgeFlipFlop:inst2.Q
+
+
+|part4|PersonalizedLatch:inst
+D => S_g.IN0
+D => R_g.IN0
+Clk => R_g.IN1
+Clk => S_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|PositiveEdgeFlipFlop:inst1
+Q <= PersonalizedLatch:inst1.Q
+D => PersonalizedLatch:inst.D
+Clock => inst2.IN0
+Clock => PersonalizedLatch:inst1.Clk
+
+
+|part4|PositiveEdgeFlipFlop:inst1|PersonalizedLatch:inst1
+D => S_g.IN0
+D => R_g.IN0
+Clk => R_g.IN1
+Clk => S_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|PositiveEdgeFlipFlop:inst1|PersonalizedLatch:inst
+D => S_g.IN0
+D => R_g.IN0
+Clk => R_g.IN1
+Clk => S_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|NegativeEdgeFlipFlop:inst2
+Q <= PersonalizedLatch:inst1.Q
+D => PersonalizedLatch:inst.D
+Clock => PersonalizedLatch:inst.Clk
+Clock => inst2.IN0
+
+
+|part4|NegativeEdgeFlipFlop:inst2|PersonalizedLatch:inst1
+D => S_g.IN0
+D => R_g.IN0
+Clk => R_g.IN1
+Clk => S_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|NegativeEdgeFlipFlop:inst2|PersonalizedLatch:inst
+D => S_g.IN0
+D => R_g.IN0
+Clk => R_g.IN1
+Clk => S_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+

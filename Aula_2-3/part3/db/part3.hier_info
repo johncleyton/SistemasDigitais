@@ -1,0 +1,26 @@
+|part3
+D => Block1:b2v_inst.D
+Clock => Block1:b2v_inst4.Clk
+Clock => Block1:b2v_inst.Clk
+Q << Block1:b2v_inst4.Q
+Q2 << Block1:b2v_inst4.Q2
+
+
+|part3|Block1:b2v_inst
+D => S_g.IN0
+D => R_g.IN0
+Clk => R_g.IN1
+Clk => S_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= Q2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part3|Block1:b2v_inst4
+D => S_g.IN0
+D => R_g.IN0
+Clk => R_g.IN1
+Clk => S_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= Q2.DB_MAX_OUTPUT_PORT_TYPE
+
+

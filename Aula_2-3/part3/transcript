@@ -1,0 +1,66 @@
+vsim -gui work.part3
+# vsim -gui work.part3 
+# Start time: 14:27:51 on Aug 27,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.part3(bdf_type)
+# ** Warning: (vsim-3473) Component instance "b2v_inst : Block1" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /part3 File: C:/Users/15484075/Desktop/part3/part3.vhd
+# ** Warning: (vsim-3473) Component instance "b2v_inst4 : Block1" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /part3 File: C:/Users/15484075/Desktop/part3/part3.vhd
+quit -sim
+# End time: 14:28:04 on Aug 27,2024, Elapsed time: 0:00:13
+# Errors: 0, Warnings: 2
+# Compile of part3.vhd was successful.
+# Compile of Block1.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.part3
+# vsim -gui work.part3 
+# Start time: 14:28:25 on Aug 27,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.part3(bdf_type)
+# Loading work.block1(structural)
+add wave -position insertpoint  \
+sim:/part3/D \
+sim:/part3/Clock \
+sim:/part3/Q
+add wave -position insertpoint  \
+sim:/part3/Q2
+force -freeze sim:/part3/D 0 0
+force -freeze sim:/part3/Clock 0 0
+run
+force -freeze sim:/part3/Clock 1 0, 0 {50 ps} -r 100
+run
+run
+run
+run
+restart
+force -freeze sim:/part3/D 0 0
+force -freeze sim:/part3/Clock 0 0
+force -freeze sim:/part3/Clock 1 0, 0 {50 ps} -r 100
+run
+run
+run
+run
+run
+force -freeze sim:/part3/D 1 0
+run
+run
+run
+run
+restart
+force -freeze sim:/part3/D 0 0
+force -freeze sim:/part3/Clock 1 0, 0 {50 ps} -r 100
+run
+run
+run
+run
+force -freeze sim:/part3/D 1 0
+run
+run
+run
+run
+run

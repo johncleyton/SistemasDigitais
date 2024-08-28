@@ -1,0 +1,17 @@
+C:/Users/15484075/Desktop/part4/part4.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/15484075/Desktop/part4/part4.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity part4
+-- Compiling architecture bdf_type of part4
+
+} {} {}} C:/Users/15484075/Desktop/part4/PersonalizedLatch.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/15484075/Desktop/part4/PersonalizedLatch.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity PersonalizedLatch
+-- Compiling architecture Structural of PersonalizedLatch
+
+} {} {}}

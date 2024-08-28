@@ -1,0 +1,45 @@
+# Compile of part2.vhd was successful.
+vsim -gui work.part2
+# vsim -gui work.part2 
+# Start time: 20:00:06 on Aug 26,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.part2(structural)
+add wave sim:/part2/*
+force -freeze sim:/part2/Clk 0 0
+force -freeze sim:/part2/D 0 0
+run
+force -freeze sim:/part2/D 1 0
+run
+force -freeze sim:/part2/Clk 1 0
+force -freeze sim:/part2/D 0 0
+run
+restart
+force -freeze sim:/part2/Clk 0 0
+force -freeze sim:/part2/D 0 0
+run
+force -freeze sim:/part2/Clk 1 0
+run
+run
+restart
+force -freeze sim:/part2/Clk 1 0
+force -freeze sim:/part2/D 1 0
+run
+force -freeze sim:/part2/D 0 0
+run
+force -freeze sim:/part2/D 1 0
+force -freeze sim:/part2/Clk 0 0
+run
+run
+restart
+force -freeze sim:/part2/Clk 1 0
+force -freeze sim:/part2/D 1 0
+run
+force -freeze sim:/part2/D 0 0
+run
+force -freeze sim:/part2/D 1 0
+force -freeze sim:/part2/Clk 0 0
+run
+force -freeze sim:/part2/D 0 0
+run

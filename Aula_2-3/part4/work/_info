@@ -1,0 +1,166 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/15484075/Desktop/part3
+Enegativeedgeflipflop
+Z0 w1724784718
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/15484075/Desktop/part4
+Z4 8C:/Users/15484075/Desktop/part4/NegativeEdgeFlipFlop.vhd
+Z5 FC:/Users/15484075/Desktop/part4/NegativeEdgeFlipFlop.vhd
+l0
+L25
+V_bS0c6NkT8[WfdYV=MbI;3
+!s100 2IV_JUS;zA;G1WIAIFzN21
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1724784832
+!i10b 1
+Z8 !s108 1724784832.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/15484075/Desktop/part4/NegativeEdgeFlipFlop.vhd|
+Z10 !s107 C:/Users/15484075/Desktop/part4/NegativeEdgeFlipFlop.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abdf_type
+R1
+R2
+DEx4 work 20 negativeedgeflipflop 0 22 _bS0c6NkT8[WfdYV=MbI;3
+l47
+L34
+Vj6DPeKJ:m2]Sc5HTG6ON_1
+!s100 [SAI4bfMG0>HUm4SPcJ0i1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Epart4
+Z13 w1724783269
+R1
+R2
+R3
+Z14 8C:/Users/15484075/Desktop/part4/part4.vhd
+Z15 FC:/Users/15484075/Desktop/part4/part4.vhd
+l0
+L25
+VH^g5WJG`kORX^Y@kMeXz12
+!s100 @^M?k[Zaz1WE02TQmzUFa0
+R6
+32
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/15484075/Desktop/part4/part4.vhd|
+Z17 !s107 C:/Users/15484075/Desktop/part4/part4.vhd|
+!i113 1
+R11
+R12
+Abdf_type
+R1
+R2
+DEx4 work 5 part4 0 22 H^g5WJG`kORX^Y@kMeXz12
+l61
+L36
+VWJl8aKKnee8<UY>^GhJU91
+!s100 XjcYmPnIMelIjX0F2ioP_0
+R6
+32
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Epersonalizedlatch
+Z18 w1724782210
+R1
+R2
+R3
+Z19 8C:/Users/15484075/Desktop/part4/PersonalizedLatch.vhd
+Z20 FC:/Users/15484075/Desktop/part4/PersonalizedLatch.vhd
+l0
+L3
+V@7dRRV9ZCPi<nfW:eAY@Y2
+!s100 [^VI=AkJSUC[QQK0Ul36W2
+R6
+32
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/15484075/Desktop/part4/PersonalizedLatch.vhd|
+Z22 !s107 C:/Users/15484075/Desktop/part4/PersonalizedLatch.vhd|
+!i113 1
+R11
+R12
+Astructural
+R1
+R2
+DEx4 work 17 personalizedlatch 0 22 @7dRRV9ZCPi<nfW:eAY@Y2
+l11
+L7
+VOm7l?UEI?eAF6`kYJkg6d1
+!s100 K4?R@X3;X2dc@n<eZIai71
+R6
+32
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
+Epositiveedgeflipflop
+Z23 w1724784706
+R1
+R2
+R3
+Z24 8C:/Users/15484075/Desktop/part4/PositiveEdgeFlipFlop.vhd
+Z25 FC:/Users/15484075/Desktop/part4/PositiveEdgeFlipFlop.vhd
+l0
+L25
+V:^IafRKUSUnZa>Lo?U8CC1
+!s100 4YA^=P?VCjBZ2lc6K2Q4H0
+R6
+32
+R7
+!i10b 1
+R8
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/15484075/Desktop/part4/PositiveEdgeFlipFlop.vhd|
+Z27 !s107 C:/Users/15484075/Desktop/part4/PositiveEdgeFlipFlop.vhd|
+!i113 1
+R11
+R12
+Abdf_type
+R1
+R2
+DEx4 work 20 positiveedgeflipflop 0 22 :^IafRKUSUnZa>Lo?U8CC1
+l47
+L34
+VPh918PeQW@bZ_NSCZk@PW0
+!s100 PkhD=0@W?OVhnFG4>OTeZ2
+R6
+32
+R7
+!i10b 1
+R8
+R26
+R27
+!i113 1
+R11
+R12

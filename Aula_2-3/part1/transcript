@@ -1,0 +1,84 @@
+# Compile of part1.vhd was successful.
+vsim -gui work.part1
+# vsim -gui work.part1 
+# Start time: 18:48:28 on Aug 26,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.part1(structural)
+add wave -position insertpoint  \
+sim:/part1/Clk
+add wave -position insertpoint  \
+sim:/part1/R
+add wave -position insertpoint  \
+sim:/part1/S
+add wave -position insertpoint  \
+sim:/part1/Q
+force -freeze sim:/part1/Clk 1 0
+force -freeze sim:/part1/R 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/part1/Qa
+add wave -position insertpoint  \
+sim:/part1/Qb
+run
+force -freeze sim:/part1/S 1 0
+run
+add wave -position insertpoint  \
+sim:/part1/Clk \
+sim:/part1/R \
+sim:/part1/S \
+sim:/part1/Qa \
+sim:/part1/Qb
+# Break key hit
+add wave -position insertpoint  \
+sim:/part1/Clk \
+sim:/part1/R \
+sim:/part1/S \
+sim:/part1/Qa \
+sim:/part1/Qb
+add wave -position insertpoint  \
+sim:/part1/Clk \
+sim:/part1/R \
+sim:/part1/S \
+sim:/part1/Qa \
+sim:/part1/Qb
+add wave -position insertpoint  \
+sim:/part1/Clk \
+sim:/part1/R \
+sim:/part1/S \
+sim:/part1/Qa \
+sim:/part1/Qb
+restart
+force -freeze sim:/part1/Clk 1 0
+force -freeze sim:/part1/R 1 0
+run
+force -freeze sim:/part1/S 0 0
+restart
+force -freeze sim:/part1/Clk 1 0
+force -freeze sim:/part1/R 1 0
+force -freeze sim:/part1/S 0 0
+run
+force -freeze sim:/part1/Clk 0 0
+force -freeze sim:/part1/R 0 0
+run
+force -freeze sim:/part1/Clk 1 0
+run
+force -freeze sim:/part1/Clk 0 0
+force -freeze sim:/part1/S 1 0
+run
+force -freeze sim:/part1/Clk 1 0
+run
+force -freeze sim:/part1/Clk 0 0
+force -freeze sim:/part1/S 0 0
+run
+# End time: 19:38:57 on Aug 26,2024, Elapsed time: 0:50:29
+# Errors: 0, Warnings: 0
