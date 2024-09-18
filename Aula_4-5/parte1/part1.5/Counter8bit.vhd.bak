@@ -1,0 +1,72 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+-- Entity for the T flip-flop
+entity T_FF is
+    port (
+        T : in std_logic;
+        CLK : in std_logic;
+        CLR : in std_logic;
+        Q : out std_logic
+    );
+end entity;
+
+-- Architecture for the T flip-flop
+architecture Behavioral of T_FF is
+	signal Q_int : std_logic;
+begin
+    process (CLK, CLR, T)
+    begin
+		  if CLR = '0' then
+            Q_int <= '0';
+				Q <= '0';
+        elsif rising_edge(CLK) then
+            if T = '1' then
+                Q <= not Q_int;
+					 Q_int <= not Q_int;
+            end if;
+        end if;
+    end process;
+end architecture;
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+-- Entity for the 8-bit counter
+entity 8-bit_counter is
+    port (
+        CLK : in std_logic;
+        CLR : in std_logic;
+        EN : in std_logic;
+        Q : out std_logic_vector(7 downto 0)
+    );
+end entity;
+
+-- Architecture for the 8-bit counter
+architecture Structural of 8-bit_counter is
+
+    -- Internal signals for flip-flop outputs
+    signal Q_int : std_logic_vector(7 downto 0);
+	 component T_FF
+        port (
+            T : in std_logic;
+				CLK : in std_logic;
+				CLR : in std_logic;
+				Q : out std_logic
+        );
+    end component;
+	 
+begin
+	-- Instantiate eight T flip-flops
+	 FF0 : T_FF port map (T => EN, CLK => CLK, CLR => CLR, Q => Q_int(0));
+    FF1 : T_FF port map (T => Q_int(0), CLK => CLK, CLR => CLR, Q => Q_int(1));
+    FF2 : T_FF port map (T => Q_int(1), CLK => CLK, CLR => CLR, Q => Q_int(2));
+    FF3 : T_FF port map (T => Q_int(2), CLK => CLK, CLR => CLR, Q => Q_int(3));
+    FF4 : T_FF port map (T => Q_int(3), CLK => CLK, CLR => CLR, Q => Q_int(4));
+    FF5 : T_FF port map (T => Q_int(4), CLK => CLK, CLR => CLR, Q => Q_int(5));
+    FF6 : T_FF port map (T => Q_int(5), CLK => CLK, CLR => CLR, Q => Q_int(6));
+    FF7 : T_FF port map (T => Q_int(6), CLK => CLK, CLR => CLR, Q => Q_int(7));
+    -- Assign the output
+    Q <= Q_int;
+
+end architecture;

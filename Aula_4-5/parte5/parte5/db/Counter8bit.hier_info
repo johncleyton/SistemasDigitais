@@ -1,0 +1,189 @@
+|Counter8bit
+clk => t_ff:gen_ff:0:T_FF_inst.clk
+clk => t_ff:gen_ff:1:T_FF_inst.clk
+clk => t_ff:gen_ff:2:T_FF_inst.clk
+clk => t_ff:gen_ff:3:T_FF_inst.clk
+clk => t_ff:gen_ff:4:T_FF_inst.clk
+clk => t_ff:gen_ff:5:T_FF_inst.clk
+clk => t_ff:gen_ff:6:T_FF_inst.clk
+clk => t_ff:gen_ff:7:T_FF_inst.clk
+clear => t_ff:gen_ff:0:T_FF_inst.clear
+clear => t_ff:gen_ff:1:T_FF_inst.clear
+clear => t_ff:gen_ff:2:T_FF_inst.clear
+clear => t_ff:gen_ff:3:T_FF_inst.clear
+clear => t_ff:gen_ff:4:T_FF_inst.clear
+clear => t_ff:gen_ff:5:T_FF_inst.clear
+clear => t_ff:gen_ff:6:T_FF_inst.clear
+clear => t_ff:gen_ff:7:T_FF_inst.clear
+enable => enable_internal[1].IN1
+enable => t_ff:gen_ff:0:T_FF_inst.T
+count[0] << t_ff:gen_ff:0:T_FF_inst.Q
+count[1] << t_ff:gen_ff:1:T_FF_inst.Q
+count[2] << t_ff:gen_ff:2:T_FF_inst.Q
+count[3] << t_ff:gen_ff:3:T_FF_inst.Q
+count[4] << t_ff:gen_ff:4:T_FF_inst.Q
+count[5] << t_ff:gen_ff:5:T_FF_inst.Q
+count[6] << t_ff:gen_ff:6:T_FF_inst.Q
+count[7] << t_ff:gen_ff:7:T_FF_inst.Q
+hex00 << display_7seg:display_7_min.output0
+hex01 << display_7seg:display_7_min.output1
+hex02 << display_7seg:display_7_min.output2
+hex03 << display_7seg:display_7_min.output3
+hex04 << display_7seg:display_7_min.output4
+hex05 << display_7seg:display_7_min.output5
+hex06 << display_7seg:display_7_min.output6
+hex10 << display_7seg:display_7_max.output0
+hex11 << display_7seg:display_7_max.output1
+hex12 << display_7seg:display_7_max.output2
+hex13 << display_7seg:display_7_max.output3
+hex14 << display_7seg:display_7_max.output4
+hex15 << display_7seg:display_7_max.output5
+hex16 << display_7seg:display_7_max.output6
+
+
+|Counter8bit|T_FF:\gen_ff:0:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:1:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:2:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:3:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:4:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:5:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:6:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:7:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|display_7seg:display_7_min
+input1 => fio_numero1.IN0
+input1 => fio_numeroB.IN0
+input1 => fio_numero4.IN0
+input1 => fio_numero6.IN0
+input2 => fio_numero6.IN1
+input2 => fio_numeroB.IN1
+input2 => fio_numero1.IN1
+input2 => fio_numero4.IN1
+input3 => fio_numero4.IN1
+input3 => fio_numero6.IN1
+input3 => fio_numeroD.IN1
+input3 => fio_numeroF.IN1
+input3 => fio_numero0.IN1
+input3 => fio_numero1.IN1
+input3 => fio_numero2.IN1
+input3 => fio_numeroB.IN1
+input4 => fio_numero9.IN1
+input4 => fio_numeroA.IN1
+input4 => fio_numeroB.IN1
+input4 => fio_numeroC.IN1
+input4 => fio_numeroD.IN1
+input4 => fio_numeroE.IN1
+input4 => fio_numeroF.IN1
+input4 => fio_numero0.IN1
+input4 => fio_numero1.IN1
+input4 => fio_numero2.IN1
+input4 => fio_numero3.IN1
+input4 => fio_numero4.IN1
+input4 => fio_numero5.IN1
+input4 => fio_numero6.IN1
+input4 => fio_numero7.IN1
+output0 <= fio_final0.DB_MAX_OUTPUT_PORT_TYPE
+output1 <= fio_final1.DB_MAX_OUTPUT_PORT_TYPE
+output2 <= fio_final2.DB_MAX_OUTPUT_PORT_TYPE
+output3 <= fio_final3.DB_MAX_OUTPUT_PORT_TYPE
+output4 <= fio_final4.DB_MAX_OUTPUT_PORT_TYPE
+output5 <= fio_final5.DB_MAX_OUTPUT_PORT_TYPE
+output6 <= fio_final6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|display_7seg:display_7_max
+input1 => fio_numero1.IN0
+input1 => fio_numeroB.IN0
+input1 => fio_numero4.IN0
+input1 => fio_numero6.IN0
+input2 => fio_numero6.IN1
+input2 => fio_numeroB.IN1
+input2 => fio_numero1.IN1
+input2 => fio_numero4.IN1
+input3 => fio_numero4.IN1
+input3 => fio_numero6.IN1
+input3 => fio_numeroD.IN1
+input3 => fio_numeroF.IN1
+input3 => fio_numero0.IN1
+input3 => fio_numero1.IN1
+input3 => fio_numero2.IN1
+input3 => fio_numeroB.IN1
+input4 => fio_numero9.IN1
+input4 => fio_numeroA.IN1
+input4 => fio_numeroB.IN1
+input4 => fio_numeroC.IN1
+input4 => fio_numeroD.IN1
+input4 => fio_numeroE.IN1
+input4 => fio_numeroF.IN1
+input4 => fio_numero0.IN1
+input4 => fio_numero1.IN1
+input4 => fio_numero2.IN1
+input4 => fio_numero3.IN1
+input4 => fio_numero4.IN1
+input4 => fio_numero5.IN1
+input4 => fio_numero6.IN1
+input4 => fio_numero7.IN1
+output0 <= fio_final0.DB_MAX_OUTPUT_PORT_TYPE
+output1 <= fio_final1.DB_MAX_OUTPUT_PORT_TYPE
+output2 <= fio_final2.DB_MAX_OUTPUT_PORT_TYPE
+output3 <= fio_final3.DB_MAX_OUTPUT_PORT_TYPE
+output4 <= fio_final4.DB_MAX_OUTPUT_PORT_TYPE
+output5 <= fio_final5.DB_MAX_OUTPUT_PORT_TYPE
+output6 <= fio_final6.DB_MAX_OUTPUT_PORT_TYPE
+
+

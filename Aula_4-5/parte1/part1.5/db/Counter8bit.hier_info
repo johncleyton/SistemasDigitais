@@ -1,0 +1,49 @@
+|Counter8bit
+clk => t_ff:gen_ff:0:T_FF_inst.clk
+clk => t_ff:gen_ff:1:T_FF_inst.clk
+clk => t_ff:gen_ff:2:T_FF_inst.clk
+clk => t_ff:gen_ff:3:T_FF_inst.clk
+clear => t_ff:gen_ff:0:T_FF_inst.clear
+clear => t_ff:gen_ff:1:T_FF_inst.clear
+clear => t_ff:gen_ff:2:T_FF_inst.clear
+clear => t_ff:gen_ff:3:T_FF_inst.clear
+enable => enable_internal[1].IN1
+enable => t_ff:gen_ff:0:T_FF_inst.T
+count[0] <= t_ff:gen_ff:0:T_FF_inst.Q
+count[1] <= t_ff:gen_ff:1:T_FF_inst.Q
+count[2] <= t_ff:gen_ff:2:T_FF_inst.Q
+count[3] <= t_ff:gen_ff:3:T_FF_inst.Q
+
+
+|Counter8bit|T_FF:\gen_ff:0:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:1:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:2:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter8bit|T_FF:\gen_ff:3:T_FF_inst
+clk => Q_int.CLK
+clear => Q_int.ACLR
+T => Q_int.ENA
+Q <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+

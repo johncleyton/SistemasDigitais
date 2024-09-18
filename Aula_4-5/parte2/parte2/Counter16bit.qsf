@@ -1,0 +1,91 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2021  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+# Date created = 13:16:39  September 15, 2024
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		8-bit_counter_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CEBA4F23C7
+set_global_assignment -name TOP_LEVEL_ENTITY Counter16bit
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:16:39  SEPTEMBER 15, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (VHDL)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name VHDL_FILE display_7seg.vhd
+set_global_assignment -name VHDL_FILE "8-bit_counter.vhd"
+set_location_assignment PIN_U7 -to clk
+set_location_assignment PIN_V13 -to enable
+set_location_assignment PIN_U21 -to hex00
+set_location_assignment PIN_V21 -to hex01
+set_location_assignment PIN_W22 -to hex02
+set_location_assignment PIN_W21 -to hex03
+set_location_assignment PIN_Y22 -to hex04
+set_location_assignment PIN_Y21 -to hex05
+set_location_assignment PIN_AA22 -to hex06
+set_location_assignment PIN_AA20 -to hex10
+set_location_assignment PIN_AB20 -to hex11
+set_location_assignment PIN_AA19 -to hex12
+set_location_assignment PIN_AA18 -to hex13
+set_location_assignment PIN_AB18 -to hex14
+set_location_assignment PIN_AA17 -to hex15
+set_location_assignment PIN_U22 -to hex16
+set_location_assignment PIN_U13 -to clear
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AB17 -to hex21
+set_location_assignment PIN_AA10 -to hex22
+set_location_assignment PIN_Y14 -to hex23
+set_location_assignment PIN_V14 -to hex24
+set_location_assignment PIN_AB22 -to hex25
+set_location_assignment PIN_AB21 -to hex26
+set_location_assignment PIN_Y16 -to hex30
+set_location_assignment PIN_W16 -to hex31
+set_location_assignment PIN_Y17 -to hex32
+set_location_assignment PIN_V16 -to hex33
+set_location_assignment PIN_U17 -to hex34
+set_location_assignment PIN_V18 -to hex35
+set_location_assignment PIN_V19 -to hex36
+set_location_assignment PIN_Y19 -to hex20
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,109 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "count[5]",
+					"strict" : false
+				},
+				{
+					"name" : "count[6]",
+					"strict" : false
+				},
+				{
+					"name" : "count[7]",
+					"strict" : false
+				},
+				{
+					"name" : "hex00",
+					"strict" : false
+				},
+				{
+					"name" : "hex01",
+					"strict" : false
+				},
+				{
+					"name" : "hex02",
+					"strict" : false
+				},
+				{
+					"name" : "hex03",
+					"strict" : false
+				},
+				{
+					"name" : "hex04",
+					"strict" : false
+				},
+				{
+					"name" : "hex05",
+					"strict" : false
+				},
+				{
+					"name" : "hex06",
+					"strict" : false
+				},
+				{
+					"name" : "hex10",
+					"strict" : false
+				},
+				{
+					"name" : "hex11",
+					"strict" : false
+				},
+				{
+					"name" : "hex12",
+					"strict" : false
+				},
+				{
+					"name" : "hex13",
+					"strict" : false
+				},
+				{
+					"name" : "hex14",
+					"strict" : false
+				},
+				{
+					"name" : "hex15",
+					"strict" : false
+				},
+				{
+					"name" : "hex16",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "clear",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,89 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/15484075/Desktop/aula2/part1/simulation/modelsim
+Ecounter8bit
+Z1 w1726424660
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/15484075/Desktop/aula2/part1/counter8bit.vhd
+Z5 FC:/Users/15484075/Desktop/aula2/part1/counter8bit.vhd
+l0
+L35
+VGL9A]=1A7RGAE;>7?9DF62
+!s100 PoDaIFgfl?`_lBVgP>gz^1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1726425653
+!i10b 1
+Z8 !s108 1726425653.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/15484075/Desktop/aula2/part1/counter8bit.vhd|
+Z10 !s107 C:/Users/15484075/Desktop/aula2/part1/counter8bit.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+Z13 DEx4 work 4 t_ff 0 22 29KGcJX518NbSzED@NJd^0
+R2
+R3
+DEx4 work 11 counter8bit 0 22 GL9A]=1A7RGAE;>7?9DF62
+l49
+L44
+VcGYeOeAclKkKN5e2M?B[30
+!s100 cFM_ln^Jh2kEJG<Q?Gm5h2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Et_ff
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L4
+V29KGcJX518NbSzED@NJd^0
+!s100 Sk>P1^ilfgeEzeg4iHU^L3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+R13
+l16
+L14
+Vg3_22S[?L2ZcjRYZ89l_U0
+!s100 77jCG_bLz5IY?CASc2QFP2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
