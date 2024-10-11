@@ -16,3 +16,6 @@ Esta pasta contém as aplicações desenvolvidas envolvendo contadores.
 - **`part3`**: Aplicação de circuito com contadores, utilizando o clock da placa FPGA.
 - **`part4`**: Aplicação de circuito com contadores, rotacionando entre 3 displays.
 - **`part5`**: Aplicação de circuito com contadores, rotacionando entre 6 displays.
+
+### `Aula_6`
+Esta pasta contém uma aplicação que realiza a escrita de letras selecionadas em código morse, através de um led
