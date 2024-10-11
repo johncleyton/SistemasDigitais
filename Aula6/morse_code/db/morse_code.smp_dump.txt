@@ -1,0 +1,8 @@
+
+State Machine - |morse_code|state
+Name state.NEXT_LETTER state.WAIT2 state.DASH state.DOT state.IDLE 
+state.IDLE 0 0 0 0 0 
+state.DOT 0 0 0 1 1 
+state.DASH 0 0 1 0 1 
+state.WAIT2 0 1 0 0 1 
+state.NEXT_LETTER 1 0 0 0 1 
