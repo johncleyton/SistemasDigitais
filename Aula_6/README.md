@@ -1,18 +1,4 @@
-# Prática em Sistemas Digitais
+# Aula 6 - Código Morse
 
-Repositório com as aplicações desenvolvidas na disciplina de Prática em Sistemas Digitais
-
-### `Aula_2-3`
-Esta pasta contém as primeiras aplicações desenvolvidas.
-- **`part1`**: Aplicação de circuito com Latch RS.
-- **`part2`**: Aplicação de circuito com Latch D.
-- **`part3`**: Aplicação de circuito com Master-Slave Flip-Flop.
-- **`part4`**: Aplicação de circuito com Master-Slave Flip-Flop com positive-edge, Master-Slave Flip-Flop com negative-edge e Latch D.
-
-### `Aula_4-5`
-Esta pasta contém as aplicações desenvolvidas envolvendo contadores.
-- **`part1`**: Aplicação de circuito com contador de 8 bits (e 4 bits na pasta 1.5), utilizando flip flops do tipo T.
-- **`part2`**: Aplicação de circuito com contadores, usando registradores.
-- **`part3`**: Aplicação de circuito com contadores, utilizando o clock da placa FPGA.
-- **`part4`**: Aplicação de circuito com contadores, rotacionando entre 3 displays.
-- **`part5`**: Aplicação de circuito com contadores, rotacionando entre 6 displays.
+Nesta aula foi desenvolvido um tradutor de código morse, escrevia letras pré-selecionadas (A ao H) em seu respectivo código. Foram utilizados 3 inputs para a seleção da letra e 1 led para escrita do código. 
+Para controle do tempo, foi utilizada a lógica de uso do clock da placa, desenvolvido na aula passada. Foram atríbuidos os valores de 0.5 segundos para o ponto e de 1.5 segundos para o traço. O código de cada letra foi armazenado em um vetor binário, sendo '0' representante de um ponto e '1' representante dos traços. Foi utilizada uma máquina de estados para a manutenção da lógica da escrita do código.
