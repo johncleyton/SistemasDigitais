@@ -1,0 +1,125 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity MemoryOnDisplay is
+    Port (
+        KEY0		 : in  std_logic;
+		  SW03		 : in	 std_logic_vector(3 downto 0);
+		  SW48		 : in	 std_logic_vector(4 downto 0);
+		  SW9			 : in  std_logic;
+		  HEX0		 : out std_logic_vector(3 downto 0);
+		  HEX2		 : out std_logic_vector(3 downto 0);
+		  HEX4    	 : out std_logic_vector(3 downto 0);
+		  HEX5	    : out std_logic;
+    );
+end MemoryOnDisplay;
+
+architecture Behavioral of MemoryOnDisplay is
+    
+	 component ram23x4 is
+	 Port
+	 (
+		address	: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+		clock		: IN STD_LOGIC  := '1';
+		data		: IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+		wren		: IN STD_LOGIC ;
+		q			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
+	 );
+	 end component;
+	 
+	 component display_7seg is 
+	 Port
+	 (
+		input1 :  IN  STD_LOGIC;
+		input2 :  IN  STD_LOGIC;
+		input3 :  IN  STD_LOGIC;
+		input4 :  IN  STD_LOGIC;
+		output0 :  OUT  STD_LOGIC;
+		output1 :  OUT  STD_LOGIC;
+		output2 :  OUT  STD_LOGIC;
+		output3 :  OUT  STD_LOGIC;
+		output4 :  OUT  STD_LOGIC;
+		output5 :  OUT  STD_LOGIC;
+		output6 :  OUT  STD_LOGIC
+	 );
+	 end component;
+
+begin
+	process(clk)
+		begin
+        if (rising_edge(clk)) then
+            if (Clear = '0') then
+               fpgaCounter <= "00000000000000000000000000";
+					displayCounter <= "00";
+            elsif (enable = '1') then
+                fpgaCounter <= std_logic_vector(unsigned(fpgaCounter) + 1);
+				-- 50MHz -> 50 milhões de 'ticks' da placa, ou seja, 1 segundo alterado no display
+				if (fpgaCounter = "10111110101111000010000000") then
+					if(displayCounter = "11") then
+						displayCounter <= "00";
+					end if;
+					case displayCounter is
+						when "00" => display1 <= "0000"; display2 <= "1110"; display3 <= "1101";
+						when "01" => display1 <= "1101"; display2 <= "0000"; display3 <= "1110";
+						when "10" => display1 <= "1110"; display2 <= "1101"; display3 <= "0000";
+						when others => display1 <= "0000"; display2 <= "1110"; display3 <= "1101";
+					end case;
+					displayCounter <= displayCounter + 1;
+					fpgaCounter <= "00000000000000000000000000";
+				end if;	
+            else
+                fpgaCounter <= fpgaCounter;
+        end if;
+		end if;
+	end process;
+
+		display_7_1 : entity work.display_7seg
+				Port map (
+					input1 => display1(0),
+					input2 => display1(1),
+					input3 => display1(2),
+					input4 => display1(3),
+					output0 => hex00,
+					output1 => hex01,
+					output2 => hex02,
+					output3 => hex03,
+					output4 => hex04,
+					output5 => hex05,
+					output6 => hex06
+				);
+				
+		display_7_2 : entity work.display_7seg
+				Port map (
+					input1 => display2(0),
+					input2 => display2(1),
+					input3 => display2(2),
+					input4 => display2(3),
+					output0 => hex10,
+					output1 => hex11,
+					output2 => hex12,
+					output3 => hex13,
+					output4 => hex14,
+					output5 => hex15,
+					output6 => hex16
+				);
+				
+		display_7_3 : entity work.display_7seg
+				Port map (
+					input1 => display3(0),
+					input2 => display3(1),
+					input3 => display3(2),
+					input4 => display3(3),
+					output0 => hex20,
+					output1 => hex21,
+					output2 => hex22,
+					output3 => hex23,
+					output4 => hex24,
+					output5 => hex25,
+					output6 => hex26
+				);
+	 
+    count <= displayCounter;
+
+end Behavioral;
