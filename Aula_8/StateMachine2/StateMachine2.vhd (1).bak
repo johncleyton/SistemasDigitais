@@ -1,0 +1,69 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity StateMachine is
+    Port ( clk : in STD_LOGIC;
+           reset : in STD_LOGIC;
+           w : in STD_LOGIC;
+           z : out STD_LOGIC;
+           LEDR : out STD_LOGIC_VECTOR (8 downto 0)); -- Output to LEDs
+end StateMachine;
+
+architecture Behavioral of StateMachine is
+    signal y : STD_LOGIC_VECTOR (8 downto 0);  -- State flip-flops (one-hot encoded)
+    signal next_y : STD_LOGIC_VECTOR (8 downto 0); -- Next state
+
+begin
+    -- Synchronous process for state transitions
+    process(clk, reset)
+    begin
+        if reset = '0' then
+            y <= "000000001";  -- Reset to state A (one-hot)
+        elsif rising_edge(clk) then
+            y <= next_y;
+        end if;
+    end process;
+
+    -- Combinational logic for next state
+    process(y, w)
+    begin
+        -- Default next state is current state (hold)
+        next_y <= y;
+
+        -- State A (reset state)
+        if y = "000000001" then
+            if w = '0' then
+                next_y <= "000000010"; -- Go to state B
+            elsif w = '1' then
+                next_y <= "000100000"; -- Go to state F
+            end if;
+
+        -- States B to E (detecting consecutive 0s)
+        elsif y = "000000010" and w = '0' then
+            next_y <= "000000100"; -- Go to state C
+        elsif y = "000000100" and w = '0' then
+            next_y <= "000001000"; -- Go to state D
+        elsif y = "000001000" and w = '0' then
+            next_y <= "000010000"; -- Go to state E (output z = 1)
+
+        -- States F to I (detecting consecutive 1s)
+        elsif y = "000100000" and w = '1' then
+            next_y <= "001000000"; -- Go to state G
+        elsif y = "001000000" and w = '1' then
+            next_y <= "010000000"; -- Go to state H
+        elsif y = "010000000" and w = '1' then
+            next_y <= "100000000"; -- Go to state I (output z = 1)
+
+        -- Transition back to state A if sequence is broken
+        else
+            next_y <= "000000001"; -- Reset to state A
+        end if;
+    end process;
+
+    -- Output logic for z (output 1 after state E or I)
+    z <= '1' when (y = "000010000") or (y = "100000000") else '0';
+
+    -- Assign state flip-flops to LEDs
+    LEDR <= y;
+
+end Behavioral;
