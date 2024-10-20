@@ -26,3 +26,8 @@ Esta pasta contém aplicações desenvolvidas envolvendo o uso de memória RAM n
 - **`part2`**: Aplicação com uso de memória, através da implementação da RAM32x4 desenvolvida na parte 1.
 - **`part3`**: Aplicação com uso de memória, através do uso de um vetor de bytes.
 - **`part4`**: Aplicação com uso de memória, contadores e arquivos .mif para armazenamento.
+
+### `Aula_8`
+Esta pasta contém aplicações desenvolvidas envolvendo o uso de máquinas de estados finitos (FSM).
+- **`part1`**: Aplicação com FSM que reconhece sequência de inputs 0s ou 1s.
+- **`part4`**: Aplicação que realiza a escrita de letras selecionadas em código morse, através de um led, utilizando o conceito de FSM.
