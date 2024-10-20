@@ -1,0 +1,116 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity morse_code is
+    Port ( clk : in STD_LOGIC;            -- Clock input
+           reset : in STD_LOGIC;          -- Asynchronous reset
+           pins : in STD_LOGIC_VECTOR(2 downto 0); -- SW2-0 input
+           btn : in STD_LOGIC;            -- KEY1 pushbutton
+           led : out STD_LOGIC           -- LED output
+           );
+end morse_code;
+
+architecture Behavioral of morse_code is
+
+    type state_type is (IDLE, DOT, DASH, WAIT2, NEXT_LETTER);
+	 type size_array is array (0 to 7) of INTEGER; 		-- Tamanho de cada letra em binário, para prevenir os problemas de armazenamento de valores incompatíveis
+    signal size : size_array := (2, 4, 4, 3, 1, 4, 3, 4);
+	 signal state : state_type;
+
+	 signal count_size : INTEGER := 0;
+    signal count : INTEGER := 0;          				-- Counter for timing
+    signal morse_code : STD_LOGIC_VECTOR(3 downto 0); -- Store the Morse code for selected letter
+    signal pulse : STD_LOGIC := '0';      				-- Pulse signal for LED
+	 signal letter_index : INTEGER := 0;
+
+begin
+    -- Morse code mapping (A=000, B=001, ..., H=111)
+    process(pins)
+    begin
+        case pins is
+            when "000" => morse_code <= "0100"; -- A: .-
+            when "001" => morse_code <= "1000"; -- B: -...
+            when "010" => morse_code <= "1010"; -- C: -.-.
+            when "011" => morse_code <= "1000"; -- D: -..
+            when "100" => morse_code <= "0000"; -- E: .
+            when "101" => morse_code <= "0010"; -- F: ..-.
+            when "110" => morse_code <= "1100"; -- G: --.
+            when "111" => morse_code <= "0000"; -- H: ....
+            when others => morse_code <= "0000"; -- Default (off)
+        end case;
+    end process;
+
+    -- State Machine
+    process(clk, reset)
+    begin
+        if reset = '0' then
+            state <= IDLE;
+            count <= 0;
+            led <= '0';
+        elsif rising_edge(clk) then
+            case state is
+                when IDLE =>
+                    if btn = '0' then
+                        state <= DOT; -- Start with a dot
+                        count <= 0;
+                        letter_index <= conv_integer(pins);
+                    end if;
+
+                when DOT =>
+						  if count_size < size(letter_index) then
+							  led <= morse_code(0);
+							  count_size <= count_size + 1;
+							  if count < 50000000 then
+									count <= count + 1; -- Adjust count for 0.5s
+							  else
+									count <= 0;
+									led <= '0';
+									state <= WAIT2; -- Wait after dot
+							  end if;
+						 else
+								state <= WAIT2;
+						  end if;
+
+                when DASH =>
+						  if count_size < size(letter_index) then
+							  led <= morse_code(0);
+							  count_size <= count_size + 1;
+							  if count < 150000000 then
+									count <= count + 1; -- Adjust count for 1.5s
+							  else
+									count <= 0;
+									led <= '0';
+									state <= WAIT2; -- Wait after dash
+							  end if;
+						  else
+								state <= WAIT2;
+						  end if;
+
+                when WAIT2 =>
+					  if count < 150000000 then
+						  count <= count + 1;
+					  else
+						  count <= 0;
+						  state <= NEXT_LETTER;
+					  end if;
+
+				when NEXT_LETTER =>
+					  if count_size < size(letter_index) then
+						  if morse_code(count_size) = '1' then
+							  state <= DASH;
+						  else
+							  state <= DOT;
+						  end if;
+					  else
+						  state <= IDLE;
+					  end if;
+
+                when others =>
+                    state <= IDLE;
+            end case;
+        end if;
+    end process;
+
+end Behavioral;
