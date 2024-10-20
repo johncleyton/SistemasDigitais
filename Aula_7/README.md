@@ -1,4 +1,4 @@
-### Aula_7
+### Aula 7 - Memory Blocks
 Esta pasta contém aplicações desenvolvidas envolvendo o uso de memória RAM na FPGA. Para o desenvolvimento de todos, foi utilizado o display de 7 segmentos utilizado nas aulas anteriores.
 - **`part1`**:
     Teste da implementação da RAM 32x4 em um projeto do Quartus, seguindo o tutorial do pdf.
